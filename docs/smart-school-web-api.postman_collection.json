@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "11d89265-f9ff-499d-864e-8230e12343b1",
+		"name": "smart-school-web-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Alunos",
+			"item": [
+				{
+					"name": "Obter Alunos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/aluno",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aluno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Aluno byId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/aluno/byId/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aluno",
+								"byId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Aluno byName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/aluno/byName?nome=Felipe&sobrenome=Eufranio",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aluno",
+								"byName"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Felipe"
+								},
+								{
+									"key": "sobrenome",
+									"value": "Eufranio"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Aluno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 10,\r\n        \"nome\": \"Felipe2\",\r\n        \"sobrenome\": \"Eufranio2\",\r\n        \"telefone\": \"1234fadsf56\",\r\n        \"alunosDisciplinas\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/aluno",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aluno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Aluno",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 10,\r\n        \"nome\": \"Felipe2333\",\r\n        \"sobrenome\": \"Eufranio23333\",\r\n        \"telefone\": \"0000000\",\r\n        \"alunosDisciplinas\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/aluno/10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aluno",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Aluno",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 10,\r\n        \"nome\": \"Felipe2333\",\r\n        \"sobrenome\": \"Eufranio23333\",\r\n        \"telefone\": \"0000000\",\r\n        \"alunosDisciplinas\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/aluno",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aluno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover Aluno",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/aluno",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aluno"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Professores",
+			"item": [
+				{
+					"name": "Obter Professores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/professor",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"professor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Professor byId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/professor/byId/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"professor",
+								"byId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Professor byName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/professor/byName?nome=Felipe",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"professor",
+								"byName"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Felipe"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Professor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 11,\r\n    \"nome\": \"Felipe23333\",\r\n    \"disciplinas\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/professor",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"professor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Professor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 11,\r\n    \"nome\": \"Felipe11111111\",\r\n    \"disciplinas\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/professor/10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"professor",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Professor",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 11,\r\n    \"nome\": \"Felipe222222\",\r\n    \"disciplinas\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/professor/11",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"professor",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover Professor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/professor/11",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"professor",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5002/api"
+		}
+	]
+}
