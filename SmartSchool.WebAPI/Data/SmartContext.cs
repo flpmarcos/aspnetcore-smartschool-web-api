@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartSchool.WebAPI.Model;
+using System;
 using System.Collections.Generic;
 
 namespace SmartSchool.WebAPI.Data
@@ -78,5 +80,9 @@ namespace SmartSchool.WebAPI.Data
                 });
         }
 
+        public static implicit operator ControllerContext(SmartContext v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

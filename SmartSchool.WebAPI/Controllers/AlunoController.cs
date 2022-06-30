@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using SmartSchool.WebAPI.Data;
 using SmartSchool.WebAPI.Model;
 
 namespace SmartSchool.WebAPI.Controllers
@@ -8,40 +9,24 @@ namespace SmartSchool.WebAPI.Controllers
     [ApiController]
     [Route("api/[controller]")]
     public class AlunoController : ControllerBase
-    {
-        public List<Aluno> Alunos= new List<Aluno>(){
-            new Aluno(){
-                Id = 1,
-                Nome = "Felipe",
-                Sobrenome = "Eufranio",
-                Telefone = "1234fadsf56"
-            },
-            new Aluno(){
-                Id = 2,
-                Nome = "Thais",
-                Sobrenome = "Eufranio",
-                Telefone = "12345fad6"
-            },
-            new Aluno(){
-                Id = 3,
-                Nome = "Gustavo",
-                Sobrenome = "Eufranio",
-                Telefone = "12fad3456"
-            }
-        };
+    {   
+        private readonly SmartContext _context;
+        public AlunoController(SmartContext context)
+        {
+            this.ControllerContext = context;   
+        }
 
-        public AlunoController(){}
-
-        [HttpGet]
+        
+[HttpGet]
         public IActionResult Get(){
-            return Ok(Alunos);
+            return Ok(_context.Alunos);
         }
         
         // api/aluno/byId
         [HttpGet("byId/{id}")]
         public IActionResult GetById(int id)
         {
-            var aluno = Alunos.FirstOrDefault(a => a.Id == id);
+            var aluno = _context.Alunos.FirstOrDefault(a => a.Id == id);
             if (aluno == null) return BadRequest("Aluno não foi encontrado!");
 
             return Ok(aluno);
@@ -50,7 +35,7 @@ namespace SmartSchool.WebAPI.Controllers
         [HttpGet("byName")]
         public IActionResult GetByName(string nome, string Sobrenome)
         {
-            var aluno = Alunos.FirstOrDefault(a => 
+            var aluno = _context.Alunos.FirstOrDefault(a => 
                 a.Nome.Contains(nome) && a.Sobrenome.Contains(Sobrenome)
             );
 
