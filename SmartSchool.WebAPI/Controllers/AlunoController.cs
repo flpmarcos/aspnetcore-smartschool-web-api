@@ -47,18 +47,28 @@ namespace SmartSchool.WebAPI.Controllers
         [HttpPost]
         public IActionResult Post(Aluno aluno)
         {
+            _context.Add(aluno);
+            _context.SaveChanges();
             return Ok(aluno);
         }
 
         [HttpPut("{id}")]
         public IActionResult Put(int id,Aluno aluno)
         {
+            var alu = _context.Alunos.FirstOrDefault(a => a.Id == id);
+            if (alu == null) return BadRequest("Aluno nao encontrado!");
+            _context.Update(aluno);
+            _context.SaveChanges();
             return Ok(aluno);
         }
 
         [HttpPatch("{id}")]
         public IActionResult Path(int id,Aluno aluno)
         {
+            var alu = _context.Alunos.FirstOrDefault(a => a.Id == id);
+            if (alu == null) return BadRequest("Aluno nao encontrado!");
+            _context.Update(aluno);
+            _context.SaveChanges();
             return Ok(aluno);
         }
 
@@ -67,6 +77,10 @@ namespace SmartSchool.WebAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+            var aluno = _context.Alunos.FirstOrDefault(a => a.Id == id);
+            if (aluno == null) return BadRequest("Aluno nao encontrado!");
+            _context.Remove(aluno);
+            _context.SaveChanges();
             return Ok();
         }
     }
