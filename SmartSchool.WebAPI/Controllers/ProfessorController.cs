@@ -11,9 +11,13 @@ namespace SmartSchool.WebAPI.Controllers
     public class ProfessorController : ControllerBase
     {
         private readonly SmartContext _context;
-        public ProfessorController(SmartContext context)
+        private readonly IRepository _repo;
+
+        public ProfessorController(SmartContext context,
+                                    IRepository repo)
         {
             _context = context;
+            _repo = repo;
         }
 
 
@@ -48,9 +52,12 @@ namespace SmartSchool.WebAPI.Controllers
         [HttpPost]
         public IActionResult Post(Professor professor)
         {
-            _context.Add(professor);
-            _context.SaveChanges();
-            return Ok(professor);
+            _repo.Add(professor);
+            if (_repo.SaveChanges())
+            {
+                return Ok(professor);
+            }
+            return BadRequest("Houve uma falha ao salvar o Professor!");
         }
 
         [HttpPut("{id}")]

@@ -55,9 +55,13 @@ namespace SmartSchool.WebAPI.Controllers
         [HttpPost]
         public IActionResult Post(Aluno aluno)
         {
-            _context.Add(aluno);
-            _context.SaveChanges();
-            return Ok(aluno);
+            _repo.Add(aluno);
+            if (_repo.SaveChanges())
+            {
+                return Ok(aluno);
+            }
+            return BadRequest("Houve uma falha ao salvar o Aluno!");
+            
         }
 
         [HttpPut("{id}")]
@@ -65,9 +69,13 @@ namespace SmartSchool.WebAPI.Controllers
         {
             var alu = _context.Alunos.AsNoTracking().FirstOrDefault(a => a.Id == id);
             if (alu == null) return BadRequest("Aluno nao encontrado!");
-            _context.Update(aluno);
-            _context.SaveChanges();
-            return Ok(aluno);
+
+            _repo.Update(aluno);
+            if (_repo.SaveChanges())
+            {
+                return Ok(aluno);
+            }
+            return BadRequest("Houve uma falha ao atualizar o Aluno!");
         }
 
         [HttpPatch("{id}")]
@@ -75,9 +83,13 @@ namespace SmartSchool.WebAPI.Controllers
         {
             var alu = _context.Alunos.AsNoTracking().FirstOrDefault(a => a.Id == id);
             if (alu == null) return BadRequest("Aluno nao encontrado!");
-            _context.Update(aluno);
-            _context.SaveChanges();
-            return Ok(aluno);
+
+            _repo.Update(aluno);
+            if (_repo.SaveChanges())
+            {
+                return Ok(aluno);
+            }
+            return BadRequest("Houve uma falha ao atualizar o Aluno!");
         }
 
 
@@ -87,9 +99,13 @@ namespace SmartSchool.WebAPI.Controllers
         {
             var aluno = _context.Alunos.FirstOrDefault(a => a.Id == id);
             if (aluno == null) return BadRequest("Aluno nao encontrado!");
-            _context.Remove(aluno);
-            _context.SaveChanges();
-            return Ok();
+
+            _repo.Delete(aluno);
+            if (_repo.SaveChanges())
+            {
+                return Ok(aluno);
+            }
+            return BadRequest("Houve uma falha ao atualizar o Aluno!");
         }
     }
 }
