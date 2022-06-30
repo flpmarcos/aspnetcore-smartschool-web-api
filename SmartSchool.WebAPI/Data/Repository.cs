@@ -1,4 +1,6 @@
-﻿namespace SmartSchool.WebAPI.Data
+﻿using SmartSchool.WebAPI.Model;
+
+namespace SmartSchool.WebAPI.Data
 {
     public class Repository : IRepository
     {
@@ -29,5 +31,36 @@
             return (_context.SaveChanges() > 0);
         }
 
+        // Alunos
+        public Aluno[] GetAllAlunos()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Aluno[] GetAllAlunosByDisciplinaId()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Aluno[] GetAlunoById()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        // Professores
+        public Professor[] GetAllProfessores()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Professor[] GetAllProfessoresByDisciplinaId()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Professor[] GetProfessorById()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
