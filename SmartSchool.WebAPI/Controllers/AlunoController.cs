@@ -13,11 +13,11 @@ namespace SmartSchool.WebAPI.Controllers
         private readonly SmartContext _context;
         public AlunoController(SmartContext context)
         {
-            this.ControllerContext = context;   
+            _context = context;   
         }
 
         
-[HttpGet]
+        [HttpGet]
         public IActionResult Get(){
             return Ok(_context.Alunos);
         }
