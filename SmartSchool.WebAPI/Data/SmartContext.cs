@@ -5,6 +5,8 @@ namespace SmartSchool.WebAPI.Data
 {
     public class SmartContext : DbContext
     {
+        public SmartContext(DbContextOptions<SmartContext> options) : base(options){ }
+
         public DbSet<Aluno> Alunos { get; set; }
 
         public DbSet<Professor> Professores { get; set; }
