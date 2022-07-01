@@ -10,7 +10,6 @@
 | Introdução a EF Core | ✅ |
 | Repositório |  ✅  |
 | DTO e AutoMapper |  ⌛ |
-| TERRAFORM - Usar modulos |  ⌛  |
 | Swagger  | ⌛   |
 | Task, Paginação e Filtros  | ⌛   |
 | Docker (.NET Core e MySQL)  | ⌛   |
