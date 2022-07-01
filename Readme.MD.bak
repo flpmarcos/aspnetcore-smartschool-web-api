@@ -20,7 +20,6 @@
 ## Migration
 Path = Exibir > Outras Janelas > Console do gerenciador de pacotes
 ```
-# VS 2022
 # Cria migration
 add-Mgration init
 
