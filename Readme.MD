@@ -8,8 +8,8 @@
 | HTTP, REST, JSON e MVC   | ✅  |
 | Projeto .NET Core | ✅  |
 | Introdução a EF Core | ✅ |
-| Repositório |  ✅  |
-| DTO e AutoMapper |  ⌛ |
+| Repositório | ✅ |
+| DTO e AutoMapper | ✅ |
 | Swagger  | ⌛   |
 | Task, Paginação e Filtros  | ⌛   |
 | Docker (.NET Core e MySQL)  | ⌛   |
