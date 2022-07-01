@@ -34,7 +34,6 @@ namespace SmartSchool.WebAPI.Controllers
         [HttpGet("getRegister")]
         public IActionResult GetRegister()
         {
-
             return Ok(new ProfessorRegistrarDto());
         }
 
