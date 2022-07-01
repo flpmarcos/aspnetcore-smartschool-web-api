@@ -17,6 +17,7 @@ namespace SmartSchool.WebAPI.Controllers
         private readonly IRepository _repo;
         private readonly IMapper _mapper;
 
+
         public AlunoController(IRepository repo , IMapper mapper)
         {
             _repo = repo;
