@@ -12,7 +12,12 @@ namespace SmartSchool.WebAPI.Helpers
                 .ForMember(
                     dest => dest.Nome,
                     opt => opt.MapFrom(src => $"{src.Nome} {src.Sobrenome}")
-                );
+                )
+                .ForMember(
+                    dest => dest.Idade,
+                    opt => opt.MapFrom(src => src.DataNasc.GetCurrentAge())
+                )
+                ;
         }
     }
 }

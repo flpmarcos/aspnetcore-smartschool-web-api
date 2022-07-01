@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartSchool.WebAPI.Data;
@@ -14,10 +15,12 @@ namespace SmartSchool.WebAPI.Controllers
     {   
 
         private readonly IRepository _repo;
+        private readonly IMapper _mapper;
 
-        public AlunoController(IRepository repo)
+        public AlunoController(IRepository repo , IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
         
@@ -25,25 +28,7 @@ namespace SmartSchool.WebAPI.Controllers
         public IActionResult Get(){
 
             var alunos = _repo.GetAllAlunos(true);
-            var alunosRetorno = new List<AlunoDto>();
-
-            foreach (var aluno in alunos)
-            {
-                alunosRetorno.Add(new AlunoDto()
-                {
-                    Id = aluno.Id,
-                    Matricula = aluno.Matricula,
-                    Nome = aluno.Nome,
-                    Telefone = aluno.Telefone,
-                    DataNasc = aluno.DataNasc,
-                    DataIni = aluno.DataIni,
-                    Ativo = aluno.Ativo
-
-
-                });
-            }
-
-            return Ok(alunosRetorno);  
+            return Ok(_mapper.Map<IEnumerable<AlunoDto>>(alunos));  
         }
         
         
