@@ -49,7 +49,7 @@ namespace SmartSchool.WebAPI
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc(
-                    "SmartSchoolAPI",
+                    "smartschoolapi",
                     new Microsoft.OpenApi.Models.OpenApiInfo()
                     {
                         Title = "SmartSchool API",
@@ -70,7 +70,12 @@ namespace SmartSchool.WebAPI
 
             app.UseRouting();
 
-            app.UseSwagger();
+            app.UseSwagger()
+               .UseSwaggerUI(options =>
+               {
+                   options.SwaggerEndpoint("/swagger/smartschoolapi/swagger.json", "smartschoolapi");
+                   options.RoutePrefix = "";
+               });
 
             app.UseAuthorization();
 
