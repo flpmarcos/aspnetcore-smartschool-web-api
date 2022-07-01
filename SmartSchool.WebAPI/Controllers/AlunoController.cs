@@ -31,8 +31,14 @@ namespace SmartSchool.WebAPI.Controllers
             var alunos = _repo.GetAllAlunos(true);
             return Ok(_mapper.Map<IEnumerable<AlunoDto>>(alunos));  
         }
-        
-        
+
+        [HttpGet("getRegister")]
+        public IActionResult GetRegister()
+        {
+
+            return Ok(new AlunoRegistrarDto());
+        }
+
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -46,7 +52,7 @@ namespace SmartSchool.WebAPI.Controllers
 
 
         [HttpPost]
-        public IActionResult Post(AlunoDto model)
+        public IActionResult Post(AlunoRegistrarDto model)
         {
             var aluno = _mapper.Map<Aluno>(model);
 
@@ -60,7 +66,7 @@ namespace SmartSchool.WebAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id,AlunoDto model)
+        public IActionResult Put(int id,AlunoRegistrarDto model)
         {
             var aluno = _repo.GetAlunoById(id);
             if (aluno == null) return BadRequest("Aluno nao encontrado!");
@@ -76,7 +82,7 @@ namespace SmartSchool.WebAPI.Controllers
         }
 
         [HttpPatch("{id}")]
-        public IActionResult Path(int id,AlunoDto model)
+        public IActionResult Path(int id, AlunoRegistrarDto model)
         {
             var aluno = _repo.GetAlunoById(id);
             if (aluno == null) return BadRequest("Aluno nao encontrado!");
