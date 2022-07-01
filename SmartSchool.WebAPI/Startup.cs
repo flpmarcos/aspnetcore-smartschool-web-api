@@ -55,9 +55,23 @@ namespace SmartSchool.WebAPI
                     new Microsoft.OpenApi.Models.OpenApiInfo()
                     {
                         Title = "SmartSchool API",
-                        Version = "1.0"
+                        Version = "1.0",
+                        TermsOfService = new Uri("https://flpmarcos.dev"),
+                        Description = "Web API construida em .Net",
+                        License = new Microsoft.OpenApi.Models.OpenApiLicense
+                        {
+                            Name = " flpmarcos License",
+                            Url = new Uri("https://flpmarcos.dev")
+                        },
+                        Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                        {
+                            Name = "Felipe Marcos",
+                            Email = "",
+                            Url = new Uri("https://flpmarcos.dev")
+                        }
                     }
                   );
+                ;
                 
                 var xmlComentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlCommentFullPath = Path.Combine(AppContext.BaseDirectory, xmlComentsFile);
