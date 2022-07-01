@@ -15,8 +15,7 @@ namespace SmartSchool.WebAPI.Controllers
 
         public ProfessorController(IRepository repo)
         {
-           
-            _repo = repo;
+           _repo = repo;
         }
 
 
@@ -27,8 +26,8 @@ namespace SmartSchool.WebAPI.Controllers
             return Ok(result);
         }
 
-        // api/Professor/byId
-        [HttpGet("byId/{id}")]
+        
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             var professor = _repo.GetProfessorById(id,true);

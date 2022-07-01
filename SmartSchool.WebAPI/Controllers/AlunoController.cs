@@ -27,8 +27,8 @@ namespace SmartSchool.WebAPI.Controllers
             return Ok(result);  
         }
         
-        // api/aluno/byId
-        [HttpGet("byId/{id}")]
+        
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             var aluno = _repo.GetAlunoById(id, false);
