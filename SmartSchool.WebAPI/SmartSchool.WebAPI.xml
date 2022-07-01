@@ -28,5 +28,40 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.Id">
+            <summary>
+            Identificador e chave do banco de dados
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.Matricula">
+            <summary>
+            Chave do Aluno matricula do aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.Nome">
+            <summary>
+            Nome do Aluno
+            </summary>
+        </member>
+        <member name="T:SmartSchool.WebAPI.Dtos.AlunoRegistrarDto">
+            <summary>
+            Este é o DTO de Aluno para Registrar.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoRegistrarDto.Id">
+            <summary>
+            Identificador e chave do banco de dados
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoRegistrarDto.Matricula">
+            <summary>
+            Chave do Aluno matricula do aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoRegistrarDto.Nome">
+            <summary>
+            Nome do Aluno
+            </summary>
+        </member>
     </members>
 </doc>
