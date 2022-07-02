@@ -31,14 +31,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/aluno/byId/1",
+							"raw": "{{url}}/aluno/8",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"aluno",
-								"byId",
-								"1"
+								"8"
 							]
 						}
 					},
@@ -155,6 +154,23 @@
 					"name": "Remover Aluno",
 					"request": {
 						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/aluno",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aluno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRegister",
+					"request": {
+						"method": "GET",
 						"header": [],
 						"url": {
 							"raw": "{{url}}/aluno",
@@ -326,6 +342,23 @@
 							"path": [
 								"professor",
 								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter getRegister",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/professor",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"professor"
 							]
 						}
 					},
