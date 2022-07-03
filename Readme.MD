@@ -10,7 +10,7 @@
 | Introdução a EF Core | ✅ |
 | Repositório | ✅ |
 | DTO e AutoMapper | ✅ |
-| Swagger  | ⌛   |
+| Swagger  | ✅    |
 | Task, Paginação e Filtros  | ⌛   |
 | Docker (.NET Core e MySQL)  | ⌛   |
 | Angular e .NET Core Web API  | ⌛   |
