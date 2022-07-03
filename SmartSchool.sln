@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSchool.WebAPI", "SmartSchool.WebAPI\SmartSchool.WebAPI.csproj", "{6390D9F8-3418-4D62-AE84-AC14B82B22CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartSchool.WebAPI", "SmartSchool.WebAPI\SmartSchool.WebAPI.csproj", "{6390D9F8-3418-4D62-AE84-AC14B82B22CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,9 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6390D9F8-3418-4D62-AE84-AC14B82B22CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +27,11 @@ Global
 		{6390D9F8-3418-4D62-AE84-AC14B82B22CB}.Release|x64.Build.0 = Release|Any CPU
 		{6390D9F8-3418-4D62-AE84-AC14B82B22CB}.Release|x86.ActiveCfg = Release|Any CPU
 		{6390D9F8-3418-4D62-AE84-AC14B82B22CB}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2F86139-B6FF-4563-8404-95380B0E8901}
 	EndGlobalSection
 EndGlobal

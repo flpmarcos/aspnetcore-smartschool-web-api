@@ -4,61 +4,120 @@
         <name>SmartSchool.WebAPI</name>
     </assembly>
     <members>
-        <member name="T:SmartSchool.WebAPI.Controllers.AlunoController">
+        <member name="T:SmartSchool.WebAPI.V1.Controllers.AlunoController">
             <summary>
             
             </summary>
         </member>
-        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Get">
+        <member name="M:SmartSchool.WebAPI.V1.Controllers.AlunoController.Get">
             <summary>
             Metodo reponsavel para retornar todos os alunos
             </summary>
             <returns></returns>
         </member>
-        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.GetRegister">
+        <member name="M:SmartSchool.WebAPI.V1.Controllers.AlunoController.GetRegister">
             <summary>
             Metodo reponsavel por retornar apenas um único AlunoDTO.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.GetById(System.Int32)">
+        <member name="M:SmartSchool.WebAPI.V1.Controllers.AlunoController.GetById(System.Int32)">
             <summary>
             Metodo reponsavel por retornar apenas um aluno por id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.Id">
+        <member name="P:SmartSchool.WebAPI.V1.Dtos.AlunoDto.Id">
             <summary>
             Identificador e chave do banco de dados
             </summary>
         </member>
-        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.Matricula">
+        <member name="P:SmartSchool.WebAPI.V1.Dtos.AlunoDto.Matricula">
             <summary>
             Chave do Aluno matricula do aluno
             </summary>
         </member>
-        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.Nome">
+        <member name="P:SmartSchool.WebAPI.V1.Dtos.AlunoDto.Nome">
             <summary>
             Nome do Aluno
             </summary>
         </member>
-        <member name="T:SmartSchool.WebAPI.Dtos.AlunoRegistrarDto">
+        <member name="T:SmartSchool.WebAPI.V1.Dtos.AlunoRegistrarDto">
             <summary>
             Este é o DTO de Aluno para Registrar.
             </summary>
         </member>
-        <member name="P:SmartSchool.WebAPI.Dtos.AlunoRegistrarDto.Id">
+        <member name="P:SmartSchool.WebAPI.V1.Dtos.AlunoRegistrarDto.Id">
             <summary>
             Identificador e chave do banco de dados
             </summary>
         </member>
-        <member name="P:SmartSchool.WebAPI.Dtos.AlunoRegistrarDto.Matricula">
+        <member name="P:SmartSchool.WebAPI.V1.Dtos.AlunoRegistrarDto.Matricula">
             <summary>
             Chave do Aluno matricula do aluno
             </summary>
         </member>
-        <member name="P:SmartSchool.WebAPI.Dtos.AlunoRegistrarDto.Nome">
+        <member name="P:SmartSchool.WebAPI.V1.Dtos.AlunoRegistrarDto.Nome">
+            <summary>
+            Nome do Aluno
+            </summary>
+        </member>
+        <member name="T:SmartSchool.WebAPI.V2.Controllers.AlunoController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SmartSchool.WebAPI.V2.Controllers.AlunoController.Get">
+            <summary>
+            Metodo reponsavel para retornar todos os alunos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.V2.Controllers.AlunoController.GetRegister">
+            <summary>
+            Metodo reponsavel por retornar apenas um único AlunoDTO.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.V2.Controllers.AlunoController.GetById(System.Int32)">
+            <summary>
+            Metodo reponsavel por retornar apenas um aluno por id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.Dtos.AlunoDto.Id">
+            <summary>
+            Identificador e chave do banco de dados
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.Dtos.AlunoDto.Matricula">
+            <summary>
+            Chave do Aluno matricula do aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.Dtos.AlunoDto.Nome">
+            <summary>
+            Nome do Aluno
+            </summary>
+        </member>
+        <member name="T:SmartSchool.WebAPI.V2.Dtos.AlunoRegistrarDto">
+            <summary>
+            Este é o DTO de Aluno para Registrar.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.Dtos.AlunoRegistrarDto.Id">
+            <summary>
+            Identificador e chave do banco de dados
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.Dtos.AlunoRegistrarDto.Matricula">
+            <summary>
+            Chave do Aluno matricula do aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.Dtos.AlunoRegistrarDto.Nome">
             <summary>
             Nome do Aluno
             </summary>
