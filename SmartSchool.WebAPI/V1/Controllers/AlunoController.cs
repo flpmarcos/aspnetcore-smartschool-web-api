@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using SmartSchool.WebAPI.Data;
 using SmartSchool.WebAPI.V1.Dtos;
 using SmartSchool.WebAPI.Model;
+using System.Threading.Tasks;
 
 namespace SmartSchool.WebAPI.V1.Controllers
 {
@@ -33,9 +34,9 @@ namespace SmartSchool.WebAPI.V1.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult Get(){
+        public async Task<IActionResult> Get(){
 
-            var alunos = _repo.GetAllAlunos(true);
+            var alunos = await _repo.GetAllAlunosAsync(true);
             return Ok(_mapper.Map<IEnumerable<AlunoDto>>(alunos));  
         }
 

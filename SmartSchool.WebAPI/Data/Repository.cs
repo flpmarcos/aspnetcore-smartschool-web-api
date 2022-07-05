@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SmartSchool.WebAPI.Model;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SmartSchool.WebAPI.Data
 {
@@ -48,6 +49,23 @@ namespace SmartSchool.WebAPI.Data
             query = query.AsNoTracking().OrderBy(a => a.Id);
 
             return query.ToArray();
+
+        }
+
+        public async Task<Aluno[]> GetAllAlunosAsync(bool includeProfessor = false)
+        {
+            IQueryable<Aluno> query = _context.Alunos;
+
+            if (includeProfessor)
+            {
+                // Aqui estou fazendo leftjoin inicialmente com a disciplina do aluno e depois com o professor.
+                query = query.Include(a => a.AlunosDisciplinas)
+                     .ThenInclude(ad => ad.Disciplina)
+                     .ThenInclude(d => d.Professor);
+            }
+            query = query.AsNoTracking().OrderBy(a => a.Id);
+
+            return await query.ToArrayAsync();
 
         }
 
