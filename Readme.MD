@@ -16,6 +16,21 @@
 | Angular e .NET Core Web API  | ⌛   |
 
 
+## Docker
+
+Build
+
+`docker build -t smartshool .`
+
+Run
+
+`docker run -d -p 5000:80 --name smartshool smartshool`
+
+
+## Dotnet  Runtime mode
+dotnet whatch run
+
+
 ## Migration
 Path = Exibir > Outras Janelas > Console do gerenciador de pacotes
 ```
