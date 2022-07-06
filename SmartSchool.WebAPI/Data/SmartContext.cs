@@ -42,34 +42,34 @@ namespace SmartSchool.WebAPI.Data
 
             builder.Entity<Curso>()
                 .HasData(new List<Curso>{
-                    new Curso(1, "Tecnologia da Informação"),
-                    new Curso(2, "Sistemas de Informação"),
-                    new Curso(3, "Ciência da Computação")
+                    new Curso(1, "Tecnologia da Informaï¿½ï¿½o"),
+                    new Curso(2, "Sistemas de Informaï¿½ï¿½o"),
+                    new Curso(3, "Ciï¿½ncia da Computaï¿½ï¿½o")
                 });
 
             builder.Entity<Disciplina>()
                 .HasData(new List<Disciplina>{
-                    new Disciplina(1, "Matemática", 1, 1),
-                    new Disciplina(2, "Matemática", 1, 3),
-                    new Disciplina(3, "Física", 2, 3),
-                    new Disciplina(4, "Português", 3, 1),
-                    new Disciplina(5, "Inglês", 4, 1),
-                    new Disciplina(6, "Inglês", 4, 2),
-                    new Disciplina(7, "Inglês", 4, 3),
-                    new Disciplina(8, "Programação", 5, 1),
-                    new Disciplina(9, "Programação", 5, 2),
-                    new Disciplina(10, "Programação", 5, 3)
+                    new Disciplina(1, "Matemï¿½tica", 1, 1),
+                    new Disciplina(2, "Matemï¿½tica", 1, 3),
+                    new Disciplina(3, "Fï¿½sica", 2, 3),
+                    new Disciplina(4, "Portuguï¿½s", 3, 1),
+                    new Disciplina(5, "Inglï¿½s", 4, 1),
+                    new Disciplina(6, "Inglï¿½s", 4, 2),
+                    new Disciplina(7, "Inglï¿½s", 4, 3),
+                    new Disciplina(8, "Programaï¿½ï¿½o", 5, 1),
+                    new Disciplina(9, "Programaï¿½ï¿½o", 5, 2),
+                    new Disciplina(10, "Programaï¿½ï¿½o", 5, 3)
                 });
 
             builder.Entity<Aluno>()
                 .HasData(new List<Aluno>(){
-                    new Aluno(1, 1, "Marta", "Kent", "33225555", DateTime.Parse("28/05/2005")),
-                    new Aluno(2, 2, "Paula", "Isabela", "3354288", DateTime.Parse("28/05/2005")),
-                    new Aluno(3, 3, "Laura", "Antonia", "55668899", DateTime.Parse("28/05/2005")),
-                    new Aluno(4, 4, "Luiza", "Maria", "6565659", DateTime.Parse("28/05/2005")),
-                    new Aluno(5, 5, "Lucas", "Machado", "565685415", DateTime.Parse("28/05/2005")),
-                    new Aluno(6, 6, "Pedro", "Alvares", "456454545", DateTime.Parse("28/05/2005")),
-                    new Aluno(7, 7, "Paulo", "José", "9874512", DateTime.Parse("28/05/2005"))
+                    new Aluno(1, 1, "Marta", "Kent", "33225555", DateTime.Parse("05/12/2005")),
+                    new Aluno(2, 2, "Paula", "Isabela", "3354288", DateTime.Parse("05/12/2005")),
+                    new Aluno(3, 3, "Laura", "Antonia", "55668899", DateTime.Parse("05/12/2005")),
+                    new Aluno(4, 4, "Luiza", "Maria", "6565659", DateTime.Parse("05/05/2005")),
+                    new Aluno(5, 5, "Lucas", "Machado", "565685415", DateTime.Parse("05/05/2005")),
+                    new Aluno(6, 6, "Pedro", "Alvares", "456454545", DateTime.Parse("05/05/2005")),
+                    new Aluno(7, 7, "Paulo", "Josï¿½", "9874512", DateTime.Parse("05/05/2005"))
                 });
 
             builder.Entity<AlunoDisciplina>()
