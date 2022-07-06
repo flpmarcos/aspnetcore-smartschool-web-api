@@ -12,13 +12,17 @@
 | DTO e AutoMapper | ✅ |
 | Swagger  | ✅  |
 | Task, Paginação e Filtros  | ✅ |
-| Docker (.NET Core e MySQL)  | ⌛   |
+| Docker (.NET Core e MySQL)  | ✅   |
 | Angular e .NET Core Web API  | ⌛   |
 
 
 ## Docker
 ### Compose
 `docker compose up -d`
+
+### Docker Hub - flpmarcos
+
+https://hub.docker.com/r/flpmarcos/smartschoolwebapi_smartschool
 
 ### Manual
 Build
