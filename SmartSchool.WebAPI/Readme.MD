@@ -31,7 +31,13 @@ Run
 
 ## Migration
 ### Mysql
+
+
 Init
+
+`dotnet ef migrations script`
+
+Add
 
 `dotnet ef migrations add initMySql`
 
