@@ -20,14 +20,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ProfessoresAlunosComponent } from './components/alunos/professores-alunos/professores-alunos.component';
+import { ProfessorDetalheComponent } from './components/professores/professor-detalhe/professor-detalhe.component';
+import { AlunosProfessoresComponent } from './components/professores/alunos-professores/alunos-professores.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlunosComponent,
+    ProfessoresAlunosComponent,
     DashboardComponent,
     PerfilComponent,
     ProfessoresComponent,
+    ProfessorDetalheComponent,
+    AlunosProfessoresComponent,
     NavComponent,
     TituloComponent
   ],

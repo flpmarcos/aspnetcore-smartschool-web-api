@@ -50,8 +50,9 @@ export class AlunosComponent implements OnInit , OnDestroy {
         this.profsAlunos = professores;
         this.modalRef = this.modalService.show(template);
       }, (error: any) => {
-        this.toastr.error(`erro: ${error}`);
-        console.log(error);
+        this.toastr.error('Professores não carregados!');
+        console.log(error.message);
+        this.spinner.hide();
       }, () => this.spinner.hide()
     );
   }
@@ -111,8 +112,22 @@ export class AlunosComponent implements OnInit , OnDestroy {
     }
   }
 
+  trocarEstado(aluno : Aluno)  {
+    this.alunoService.trocarEstado(aluno.id,aluno.ativo)
+        .pipe(takeUntil(this.unsubscriber))
+        .subscribe(
+          () => {
+            this.carregarAlunos();
+            this.toastr.success('Aluno salvo com sucesso!');
+          }, (error: any) => {
+            this.toastr.error(`Erro: Aluno não pode ser salvo!`);
+            console.error(error);
+          }, () => this.spinner.hide()
+        );
+  }
+
   carregarAlunos() {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const alunoId = +this.route.snapshot.paramMap.get('id');
 
     this.spinner.show();
     this.alunoService.getAll()
@@ -120,25 +135,42 @@ export class AlunosComponent implements OnInit , OnDestroy {
       .subscribe((alunos: Aluno[]) => {
         this.alunos = alunos;
 
-        if (id > 0) {
-          this.alunoSelect(this.alunos.find(aluno => aluno.id === id));
+        if (alunoId > 0) {
+          this.alunoSelect(alunoId);
         }
 
         this.toastr.success('Alunos foram carregado com Sucesso!');
       }, (error: any) => {
         this.toastr.error('Alunos não carregados!');
         console.log(error);
+        this.spinner.hide();
       }, () => this.spinner.hide()
     );
   }
 
-  alunoSelect(aluno: Aluno) {
-    this.modeSave = 'put';
-    this.alunoSelecionado = aluno;
-    this.alunoForm.patchValue(aluno);
+  alunoSelect(alunoId: number) : void {
+    this.modeSave = 'patch';
+    this.alunoService.getById(alunoId).subscribe(
+      // Sucess
+      (alunoReturn) => {
+        this.alunoSelecionado = alunoReturn;
+        this.toastr.success('Aluno carregado!');
+        this.alunoForm.patchValue(this.alunoSelecionado);
+      },
+      // Erro
+      (error) => {
+        this.toastr.error('Aluno não carregado!');
+        console.error(error);
+        this.spinner.hide();
+      },
+      // After
+      () => this.spinner.hide()
+    );
   }
 
-  voltar() {
+
+
+ voltar() {
     this.alunoSelecionado = null;
   }
 

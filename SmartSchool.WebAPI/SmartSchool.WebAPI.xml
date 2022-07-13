@@ -43,6 +43,26 @@
             Nome do Aluno
             </summary>
         </member>
+        <member name="T:SmartSchool.WebAPI.V1.Dtos.AlunoEstadoDto">
+            <summary>
+            Este é o DTO de Aluno para Registrar.
+            </summary>
+        </member>
+        <member name="T:SmartSchool.WebAPI.V1.Dtos.AlunoPatchDto">
+            <summary>
+            Este é o DTO de Aluno para Registrar.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V1.Dtos.AlunoPatchDto.Id">
+            <summary>
+            Identificador e chave do banco de dados
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V1.Dtos.AlunoPatchDto.Nome">
+            <summary>
+            Nome do Aluno
+            </summary>
+        </member>
         <member name="T:SmartSchool.WebAPI.V1.Dtos.AlunoRegistrarDto">
             <summary>
             Este é o DTO de Aluno para Registrar.

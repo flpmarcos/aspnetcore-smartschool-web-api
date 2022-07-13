@@ -41,23 +41,29 @@
           <th scope="col">Visualizar</th>
           <th scope="col">#</th>
           <th scope="col">Nome</th>
-          <th scope="col">Sobrenome</th>
+          <!-- <th scope="col">Sobrenome</th> -->
           <th scope="col">telefone</th>
           <th scope="col">Opções</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let aluno of alunos">
-          <td><button (click)="alunoSelect(aluno)"
+          <td><button (click)="alunoSelect(aluno.id)"
             class="text-dark btn btn-sm btn-outline-warning">Detalhe</button></td>
           <td scope="row">{{aluno.id}}</td>
           <td>{{aluno.nome}}</td>
-          <td>{{aluno.sobrenome}}</td>
+          <!-- <td>{{aluno.sobrenome}}</td> -->
           <td>{{aluno.telefone}}</td>
           <td>
             <div class="btn-group">
-              <button (click)="openModal(template, aluno.id)" class="btn btn-sm btn-outline-primary">Professores</button>
-              <button class="btn btn-sm btn-outline-danger">Desativar</button>
+              <button (click)="openModal(template, aluno.id)" *ngIf="aluno.ativo"
+              class="btn btn-sm btn-outline-primary">Professores</button>
+              <button
+              class="btn btn-sm"
+              [ngClass]="{'btn-outline-danger' : aluno.ativo, 'btn-success': !aluno.ativo}"
+              (click)="trocarEstado(aluno)">
+                {{ aluno.ativo ? 'Desativar' : 'Ativar'}}
+              </button>
             </div>
           </td>
         </tr>
@@ -69,7 +75,7 @@
 
 <ng-template #template>
   <div class="modal-body">
-    <!-- <app-professores-alunos (closeModal)="closeModal()" [professores]="profsAlunos"></app-professores-alunos> -->
+    <app-professores-alunos (closeModal)="closeModal()" [professores]="profsAlunos"></app-professores-alunos>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn pull-right" aria-label="Close"
