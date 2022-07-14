@@ -7,7 +7,7 @@ namespace SmartSchool.WebAPI.V1.Dtos
     /// </summary>
     public class AlunoEstadoDto
     {
-        public bool Ativo { get; set; }
+        public bool Estado { get; set; }
 
     }
 }

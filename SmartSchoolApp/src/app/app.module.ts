@@ -17,6 +17,7 @@ import { NavComponent } from './components/shared/nav/nav.component';
 import { TituloComponent } from './components/shared/titulo/titulo.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -45,6 +46,7 @@ import { AlunosProfessoresComponent } from './components/professores/alunos-prof
     BrowserAnimationsModule,
     HttpClientModule,
     BsDropdownModule.forRoot(),
+    PaginationModule.forRoot(),
     ModalModule.forRoot(),
     NgxSpinnerModule,
     ToastrModule.forRoot({

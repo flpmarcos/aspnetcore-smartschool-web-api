@@ -66,12 +66,21 @@ namespace SmartSchool.WebAPI.V1.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var aluno = _repo.GetAlunoById(id, false);
+            var aluno = _repo.GetAlunoById(id, true);
             if (aluno == null) return BadRequest("Aluno não foi encontrado!");
 
             var alunoDto = _mapper.Map<AlunoRegistrarDto>(aluno);
 
             return Ok(alunoDto);
+        }
+
+
+        [HttpGet("ByDisciplina/{id}")]
+        public async Task<IActionResult> GetByDisciplinaId(int id)
+        {
+            var result = await _repo.GetAllAlunosByDisciplinaIdAsync(id, false);
+            
+            return Ok(result);
         }
 
 
@@ -128,12 +137,12 @@ namespace SmartSchool.WebAPI.V1.Controllers
             var aluno = _repo.GetAlunoById(id);
             if (aluno == null) return BadRequest("Aluno nao encontrado!");
 
-            _mapper.Map(model, aluno);
-
+            aluno.Ativo = model.Estado;
+            
             _repo.Update(aluno);
             if (_repo.SaveChanges())
             {
-                var msg = model.Ativo ? "Ativado" : "Desativado";
+                var msg = model.Estado ? "Ativado" : "Desativado";
                 return Ok(new { message = $"Aluno {msg} com sucesso!" });
             }
             return BadRequest("Houve uma falha ao atualizar o Aluno!");

@@ -45,7 +45,7 @@ namespace SmartSchool.WebAPI.V1.Controllers
             var professor = _repo.GetProfessorById(id,true);
             if (professor == null) return BadRequest("Professor n�o foi encontrado!");
 
-            var professorDto = _mapper.Map<AlunoDto>(professor);
+            var professorDto = _mapper.Map<ProfessorDto>(professor);
 
             return Ok(professorDto);
 

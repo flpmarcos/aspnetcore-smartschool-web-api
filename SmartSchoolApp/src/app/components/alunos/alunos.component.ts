@@ -11,6 +11,7 @@ import { Professor } from '../../models/Professor';
 
 import { AlunoService } from 'src/app/services/aluno.service';
 import { ProfessorService } from 'src/app/services/professor.service';
+import { PaginatedResult, Pagination } from 'src/app/models/Pagination';
 
 @Component({
   selector: 'app-alunos',
@@ -33,6 +34,7 @@ export class AlunosComponent implements OnInit , OnDestroy {
   public aluno: Aluno;
   public msnDeleteAluno: string;
   public modeSave = 'post';
+  pagination : Pagination;
 
   openModal(template: TemplateRef<any>, alunoId: number) {
     this.professoresAlunos(template, alunoId);
@@ -70,6 +72,7 @@ export class AlunosComponent implements OnInit , OnDestroy {
   }
 
   ngOnInit() {
+    this.pagination = { currentPage: 1, itemsPerPage: 4 } as Pagination;
     this.carregarAlunos();
   }
 
@@ -83,7 +86,8 @@ export class AlunosComponent implements OnInit , OnDestroy {
       id: [0],
       nome: ['', Validators.required],
       sobrenome: ['', Validators.required],
-      telefone: ['', Validators.required]
+      telefone: ['', Validators.required],
+      ativo : []
     });
   }
 
@@ -113,7 +117,7 @@ export class AlunosComponent implements OnInit , OnDestroy {
   }
 
   trocarEstado(aluno : Aluno)  {
-    this.alunoService.trocarEstado(aluno.id,aluno.ativo)
+    this.alunoService.trocarEstado(aluno.id, !aluno.ativo)
         .pipe(takeUntil(this.unsubscriber))
         .subscribe(
           () => {
@@ -126,26 +130,34 @@ export class AlunosComponent implements OnInit , OnDestroy {
         );
   }
 
-  carregarAlunos() {
+  carregarAlunos(): void {
     const alunoId = +this.route.snapshot.paramMap.get('id');
 
     this.spinner.show();
-    this.alunoService.getAll()
+    this.alunoService.getAll(this.pagination.currentPage, this.pagination.itemsPerPage)
       .pipe(takeUntil(this.unsubscriber))
-      .subscribe((alunos: Aluno[]) => {
-        this.alunos = alunos;
+      .subscribe((alunos: PaginatedResult<Aluno[]>) => {
+        this.alunos = alunos.result;
+        this.pagination = alunos.pagination;
 
         if (alunoId > 0) {
           this.alunoSelect(alunoId);
         }
 
         this.toastr.success('Alunos foram carregado com Sucesso!');
-      }, (error: any) => {
+      },
+      (error: any) => {
         this.toastr.error('Alunos não carregados!');
-        console.log(error);
+        console.error(error);
         this.spinner.hide();
-      }, () => this.spinner.hide()
+      },
+      () => this.spinner.hide()
     );
+  }
+
+  pageChanged(event: any): void {
+    this.pagination.currentPage = event.page;
+    this.carregarAlunos();
   }
 
   alunoSelect(alunoId: number) : void {
